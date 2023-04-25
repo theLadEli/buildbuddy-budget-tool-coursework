@@ -1,0 +1,121 @@
+/* Font Linking */
+@font-face {
+    font-family: 'Aeonik';
+    src: url('assets/Aeonik-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Aeonik';
+    src: url('assets/Aeonik-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'Aeonik';
+    src: url('assets/Aeonik-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+  
+
+/* Global Styles */
+
+body {
+    background-color: #F2F2F5;
+    padding: 15px;
+}
+
+h3 {
+    font-family: 'Aeonik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+/* Dashboard Styling */
+
+#dashboard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+}
+
+/* Dougnut Wheel */
+
+.wheel-container {
+    position: relative;
+}
+
+/* Estimated Costs */
+
+#lineChart {
+    width: 100%;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.segment {
+    height: 100%;
+    position: absolute;
+}
+
+.segment:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.segment:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Pricing Breakdown Table */
+
+table {
+    margin-top: 15px;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+table, th, td {
+    border: none;
+    background: transparent;
+    vertical-align: middle;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+  
+thead th {
+    text-align: left;
+}
+  
+.color-square {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    border-radius: 3px;
+}
+  
+td:nth-child(1), th:nth-child(1) {
+    width: 16;
+}
+  
+td:nth-child(2), th:nth-child(2) {
+    width: 40;
+}
+  
+td:nth-child(3), th:nth-child(3) {
+    text-align: center;
+    width: 20;
+}
+  
+td:nth-child(4), th:nth-child(4) {
+    text-align: center;
+    width: 20;
+}
