@@ -41,7 +41,7 @@ function drawDoughnutWheel() {
 
     ctx.save();
     ctx.translate(centerX, centerY - 15); // Adjust the vertical position of the text
-    ctx.fillStyle = gradient;
+    ctx.fillStyle = '#5aa5ac';
     ctx.fillText(`${userScore}%`, 0, 0);
     ctx.restore();
 
