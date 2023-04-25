@@ -38,6 +38,11 @@ h3 {
 
 /* Navbar */
 
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
 nav {
     position: relative;
     display: flex;
@@ -47,7 +52,7 @@ nav {
     background-position: center;
     background-size: cover;
     height: 80px;
-    padding: 50px 30px;
+    padding: env(safe-area-inset-top) 30px;
     text-align: center;
 }
 
@@ -57,14 +62,15 @@ nav img {
     left: 50%;
     transform: translate(-50%, -50%);
     max-height: 100%;
-    max-width: 170px;
+    max-width: 140px;
 }
 
 nav i {
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     margin-left: 10px;
 }
+
   
 
 /* Dashboard Styling */
