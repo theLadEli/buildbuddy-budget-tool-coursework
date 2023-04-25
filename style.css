@@ -244,3 +244,8 @@ td:nth-child(4), th:nth-child(4) {
     display: inline-block;
     border-radius: 4px;
 }
+
+.shell-cost-container {
+    display: flex;
+    align-items: center;
+}
