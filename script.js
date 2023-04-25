@@ -6,8 +6,17 @@ const ctx = canvas.getContext('2d');
 const userScore = Math.min(62, 100); // Replace 62 with the actual user score value, and cap it at 100
 const radius = 75;
 const strokeWidth = 20;
-const centerX = canvas.width / 2;
-const centerY = canvas.height / 2;
+
+// Adjust canvas size and scale based on device pixel ratio
+const dpr = window.devicePixelRatio || 1;
+canvas.style.width = canvas.clientWidth + 'px';
+canvas.style.height = canvas.clientHeight + 'px';
+canvas.width = canvas.clientWidth * dpr;
+canvas.height = canvas.clientHeight * dpr;
+ctx.scale(dpr, dpr);
+
+const centerX = canvas.width / (2 * dpr);
+const centerY = canvas.height / (2 * dpr);
 
 function drawDoughnutWheel() {
     // Draw the default wheel

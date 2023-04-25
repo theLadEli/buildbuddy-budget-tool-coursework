@@ -80,6 +80,10 @@ nav i {
 
 /* Dougnut Wheel */
 
+#doughnutWheel {
+    font-family: 'Aeonik';
+}
+
 .wheel-container {
     position: relative;
 }
