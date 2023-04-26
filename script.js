@@ -109,6 +109,77 @@ function drawLineChart() {
 
 drawLineChart();
 
+
+// Shell Cost CSV to HTML Table
+function csvToArray(csv) {
+  const [header, ...rows] = csv.split('\n').map(row => row.split(',').map(item => item.trim()));
+  return rows.map(row => header.reduce((obj, key, i) => ({ ...obj, [key]: row[i] }), {}));
+}
+
+function formatCurrency(number) {
+  return parseFloat(number).toLocaleString('en-GB', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}
+
+
+function updateTotalEstimatedCost() {
+  const rows = document.querySelectorAll('#table-body tr');
+  let totalEstimatedCost = 0;
+
+  rows.forEach(row => {
+    totalEstimatedCost += parseFloat(row.getAttribute('data-estimated-cost'));
+  });
+
+  document.getElementById('totalEstimatedCost').textContent = `£${formatCurrency(totalEstimatedCost)}`;
+}
+
+function generateTableRows(data) {
+  const tbody = document.getElementById('table-body');
+
+  data.forEach(item => {
+    const tr = document.createElement('tr');
+    tr.setAttribute('data-estimated-cost', item.Estimated);
+
+    const itemName = document.createElement('td');
+    const strong = document.createElement('strong');
+    strong.textContent = item.Item;
+    itemName.appendChild(strong);
+    tr.appendChild(itemName);
+
+    const estimatedCost = document.createElement('td');
+    estimatedCost.textContent = `£${formatCurrency(item.Estimated)}`;
+    tr.appendChild(estimatedCost);
+
+    const actualCost = document.createElement('td');
+    const div = document.createElement('div');
+    div.classList.add('input-container');
+    const span = document.createElement('span');
+    span.classList.add('currency-symbol');
+    span.textContent = '£';
+    div.appendChild(span);
+    const input = document.createElement('input');
+    input.setAttribute('type', 'number');
+    input.setAttribute('pattern', '[0-9]*');
+    input.setAttribute('inputmode', 'numeric');
+    div.appendChild(input);
+    actualCost.appendChild(div);
+    tr.appendChild(actualCost);
+
+    tbody.appendChild(tr);
+  });
+
+  updateTotalEstimatedCost();
+}
+
+async function fetchCSVandGenerateTable() {
+  const response = await fetch('shell-cost.csv');
+  const csv = await response.text();
+  const data = csvToArray(csv);
+  generateTableRows(data);
+}
+
+fetchCSVandGenerateTable();
+
+
 // Shell Cost Calculator
 const totalEstimatedCostDisplay = document.querySelector('tfoot td:nth-child(2)');
 const totalActualCostDisplay = document.querySelector('tfoot td:nth-child(3)');
