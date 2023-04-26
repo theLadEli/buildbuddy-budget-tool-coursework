@@ -110,29 +110,37 @@ function drawLineChart() {
 drawLineChart();
 
 // Shell Cost Calculator
-const totalShellCostDisplay = document.getElementById('totalShellCost');
-    const enablingWorksInput = document.getElementById('enablingWorks');
-    const foundationsInput = document.getElementById('foundations');
+const totalEstimatedCostDisplay = document.querySelector('tfoot td:nth-child(2)');
+const totalActualCostDisplay = document.querySelector('tfoot td:nth-child(3)');
+const costTable = document.getElementById('costTable');
 
-    let totalShellCost = 0;
+function formatNumber(number) {
+  return number.toLocaleString('en-GB');
+}
 
-    function formatNumber(number) {
-      return number.toLocaleString('en-GB');
+function updateTotalCosts() {
+  let totalEstimatedCost = 0;
+  let totalActualCost = 0;
+
+  const rows = costTable.querySelectorAll('tbody tr');
+  rows.forEach(row => {
+    const estimatedCost = parseFloat(row.getAttribute('data-estimated-cost'));
+    totalEstimatedCost += estimatedCost;
+
+    const actualCostInput = row.querySelector('input[type="number"]');
+    if (actualCostInput.value) {
+      totalActualCost += parseFloat(actualCostInput.value);
     }
+  });
 
-    function updateTotalShellCost() {
-      totalShellCost = 0;
+  totalEstimatedCostDisplay.innerText = `£${formatNumber(totalEstimatedCost)}`;
+  totalActualCostDisplay.innerText = `£${formatNumber(totalActualCost)}`;
+}
 
-      if (enablingWorksInput.value) {
-        totalShellCost += parseFloat(enablingWorksInput.value);
-      }
+costTable.addEventListener('input', (event) => {
+  if (event.target.tagName === 'INPUT' && event.target.type === 'number') {
+    updateTotalCosts();
+  }
+});
 
-      if (foundationsInput.value) {
-        totalShellCost += parseFloat(foundationsInput.value);
-      }
-
-      totalShellCostDisplay.innerText = formatNumber(totalShellCost);
-    }
-
-    enablingWorksInput.addEventListener('input', updateTotalShellCost);
-    foundationsInput.addEventListener('input', updateTotalShellCost);
+updateTotalCosts();
