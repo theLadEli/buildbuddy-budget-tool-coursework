@@ -40,12 +40,8 @@
                     <!-- content for right column -->
                     <h3>Total Costs</h3>
 
-                    <p class="project-cost-title">Estimated Costs:</p>
-                    <p class="project-cost-value" id="estimatedCosts" style="
-                    margin-bottom: 3px"></p>
-
-                    <p class="project-cost-title">Estimated Costs:</p>
-                    <p class="project-cost-value" id="actualCosts"></p>
+                    <div id="totalEstimatedCostDisplayOutside">Estimated: £0</div>
+                    <div id="totalActualCostDisplayOutside">Actual: £0</div>
                 </div>
             </div>
 
@@ -125,24 +121,26 @@
             excluding finishes, fixtures, and utilities.</p>
 
         <!-- Pricing Breakdown Table -->
-                    <table id="costTable">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Estimated</th>
-                                <th><b>Actual</b></th>
-                            </tr>
-                        </thead>
-                        <tbody id="table-body">
+        <table id="costTable">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Estimated</th>
+                    <th><b>Actual</b></th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
 
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>TOTAL</td>
-                                <td id="totalEstimatedCost">Estimated Here</td>
-                                <td id="totalActualCost"><b>Actual Here</b></td>
-                            </tr>
-                        </tfoot>
+
+
+            <tfoot>
+                <tr>
+                    <td class="tfoot-cell">TOTAL</td>
+                    <td style="font-weight: bold;" class="tfoot-cell" id="totalEstimatedCost">Estimated Here</td>
+                    <td style="font-weight: bold;" class="tfoot-cell" id="totalActualCost"><b>Actual Here</b></td>   
+                </tr>
+            </tfoot>
 
             </tbody>
         </table>
@@ -150,6 +148,7 @@
     </section>
 
 
+    
 
 
     <script src="script.js"></script>
