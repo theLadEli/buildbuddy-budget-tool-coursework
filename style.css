@@ -249,3 +249,20 @@ td:nth-child(4), th:nth-child(4) {
     display: flex;
     align-items: center;
 }
+
+/* Add a £ symbol before text input even while editing */
+.input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+input[type="number"] {
+    padding-left: 20px;
+}

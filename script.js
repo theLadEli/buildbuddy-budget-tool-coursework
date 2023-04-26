@@ -109,3 +109,30 @@ function drawLineChart() {
 
 drawLineChart();
 
+// Shell Cost Calculator
+const totalShellCostDisplay = document.getElementById('totalShellCost');
+    const enablingWorksInput = document.getElementById('enablingWorks');
+    const foundationsInput = document.getElementById('foundations');
+
+    let totalShellCost = 0;
+
+    function formatNumber(number) {
+      return number.toLocaleString('en-GB');
+    }
+
+    function updateTotalShellCost() {
+      totalShellCost = 0;
+
+      if (enablingWorksInput.value) {
+        totalShellCost += parseFloat(enablingWorksInput.value);
+      }
+
+      if (foundationsInput.value) {
+        totalShellCost += parseFloat(foundationsInput.value);
+      }
+
+      totalShellCostDisplay.innerText = formatNumber(totalShellCost);
+    }
+
+    enablingWorksInput.addEventListener('input', updateTotalShellCost);
+    foundationsInput.addEventListener('input', updateTotalShellCost);
