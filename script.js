@@ -1,9 +1,11 @@
 // Dougnut Wheel
 
+let percentageNumber = 0;
+
 const canvas = document.getElementById('doughnutWheel');
 const ctx = canvas.getContext('2d');
 
-const userScore = Math.min(62, 100); // Replace 62 with the actual user score value, and cap it at 100
+const userScore = Math.min(percentageNumber, 100); // Replace 62 with the actual user score value, and cap it at 100
 const radius = 75;
 const strokeWidth = 20;
 
@@ -18,7 +20,10 @@ ctx.scale(dpr, dpr);
 const centerX = canvas.width / (2 * dpr);
 const centerY = canvas.height / (2 * dpr);
 
-function drawDoughnutWheel() {
+function drawDoughnutWheel(percentage) {
+  const userScore = Math.min(percentage, 100); // Replace 62 with the actual user score value, and cap it at 100
+
+
     // Draw the default wheel
     ctx.beginPath();
     ctx.arc(centerX, centerY, radius - strokeWidth / 2, 0.7 * Math.PI, 2.3 * Math.PI);
@@ -62,16 +67,6 @@ function drawDoughnutWheel() {
     // Draw the "costs" text
     ctx.fillText('costs', centerX, centerY + 24); // Adjust the vertical position of the text
 }
-
-drawDoughnutWheel();
-
-// Estimated Costs
-
-var estimatedCosts = "£79,300";
-var actualCosts = "£24,000";
-
-document.getElementById("estimatedCosts").innerHTML = estimatedCosts;
-document.getElementById("actualCosts").innerHTML = actualCosts;
 
 // Horizontal Chart
 
@@ -120,7 +115,6 @@ function formatCurrency(number) {
   return parseFloat(number).toLocaleString('en-GB', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 }
 
-
 function updateTotalEstimatedCost() {
   const rows = document.querySelectorAll('#table-body tr');
   let totalEstimatedCost = 0;
@@ -168,6 +162,7 @@ function generateTableRows(data) {
   });
 
   updateTotalEstimatedCost();
+  updateTotalCosts();
 }
 
 async function fetchCSVandGenerateTable() {
@@ -185,10 +180,6 @@ const totalEstimatedCostDisplay = document.querySelector('tfoot td:nth-child(2)'
 const totalActualCostDisplay = document.querySelector('tfoot td:nth-child(3)');
 const costTable = document.getElementById('costTable');
 
-function formatNumber(number) {
-  return number.toLocaleString('en-GB');
-}
-
 function updateTotalCosts() {
   let totalEstimatedCost = 0;
   let totalActualCost = 0;
@@ -204,9 +195,28 @@ function updateTotalCosts() {
     }
   });
 
-  totalEstimatedCostDisplay.innerText = `£${formatNumber(totalEstimatedCost)}`;
-  totalActualCostDisplay.innerText = `£${formatNumber(totalActualCost)}`;
+  const formattedEstimatedCost = `£${formatCurrency(totalEstimatedCost)}`;
+  const formattedActualCost = `£${formatCurrency(totalActualCost)}`;
+
+  totalEstimatedCostDisplay.innerText = formattedEstimatedCost;
+  totalActualCostDisplay.innerText = formattedActualCost;
+
+  // Update the new elements with the latest costs
+  document.getElementById('totalEstimatedCostDisplayOutside').textContent = `Estimated: ${formattedEstimatedCost}`;
+  document.getElementById('totalActualCostDisplayOutside').textContent = `Actual: ${formattedActualCost}`;
+
+  // Calculate the percentage
+  const percentage = (totalActualCost / totalEstimatedCost) * 100;
+
+  // Update the percentageNumber variable
+  percentageNumber = parseFloat(percentage.toFixed(2));
+
+  // Redraw the doughnut wheel with the updated percentage
+  drawDoughnutWheel(percentageNumber);
 }
+
+
+
 
 costTable.addEventListener('input', (event) => {
   if (event.target.tagName === 'INPUT' && event.target.type === 'number') {

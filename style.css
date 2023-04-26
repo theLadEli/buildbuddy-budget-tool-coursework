@@ -92,30 +92,14 @@ nav i {
 
 /* Total Project Costs */
 
+#totalEstimatedCostDisplayOutside,
+#totalActualCostDisplayOutside {
+  display: flex;
+  flex-direction: column;
+}
+
 .total-project-costs {
     text-align: left;
-}
-
-.project-cost-title {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 19px;
-    text-align: center;
-    padding-bottom: 6px;
-    margin: 0;
-    text-align: left;
-}
-
-
-.project-cost-value {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 17px;
-    text-align: center;
-    text-align: left;
-    padding-bottom: 6px;
 }
 
 .percentage-notice {
@@ -233,9 +217,14 @@ td:nth-child(4), th:nth-child(4) {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.06);
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     margin: 15px;
     margin-top: 30px;
+}
+
+.shell-cost-container h3 {
+    margin: 0;
+    padding-left: 15px;
 }
 
 .focus-color-square {
@@ -248,28 +237,88 @@ td:nth-child(4), th:nth-child(4) {
 .shell-cost-container {
     display: flex;
     align-items: center;
+    margin-bottom: 15px;
 }
 
-/* Add a £ symbol before text input even while editing */
+#shell-costs p {
+    font-size: 14px !important;
+}
+
+
+/* Table properties */
+
+#costTable {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#costTable th:first-child,
+#costTable td:first-child {
+    width: 40%;
+}
+
+#costTable th {
+    font-size: 14px;
+}
+
+
+#costTable th:nth-child(2),
+#costTable td:nth-child(2) {
+    margin-right: 20px;
+    width: 20%;
+    color: #57B3BD;
+    text-align: center;
+}
+
+  #costTable th:nth-child(3),
+  #costTable td:nth-child(3) {
+    width: 20%;
+  }
+
 .input-container {
     position: relative;
     display: inline-block;
     width: 100%;
+    margin-left: 5px;
 }
 
-.currency-symbol {
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 17px;
-}
-
-input[type="number"] {
+.input-container input[type="number"]  {
     padding-left: 20px;
     background: #FAFAFA;
     width: 100%;
     padding: 8px 12px;
     border: 1px solid #E6E9F0;
     border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#shell-costs strong {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.tfoot-cell {
+    margin-top: 90px !important;
+    padding: 15px 0;
+    border-top: solid 1px #E6E9F0;
+}
+
+.spacing-div {
+    height: 15px;
+}
+
+tbody tr:last-child td {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}  
+
+
+/* Add a £ symbol before text input even while editing */
+.currency-symbol {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 17px;
 }
