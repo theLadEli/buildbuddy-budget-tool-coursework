@@ -21,6 +21,8 @@ const centerX = canvas.width / (2 * dpr);
 const centerY = canvas.height / (2 * dpr);
 
 function drawDoughnutWheel(percentage) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   const userScore = Math.min(percentage, 100); // Replace 62 with the actual user score value, and cap it at 100
 
 
