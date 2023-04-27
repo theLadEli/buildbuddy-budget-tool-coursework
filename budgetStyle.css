@@ -5,21 +5,21 @@
     font-weight: normal;
     font-style: normal;
 }
-  
+
 @font-face {
     font-family: 'Aeonik';
     src: url('assets/Aeonik-Bold.ttf');
     font-weight: bold;
     font-style: normal;
 }
-  
+
 @font-face {
     font-family: 'Aeonik';
     src: url('assets/Aeonik-Light.ttf');
     font-weight: 300;
     font-style: normal;
 }
-  
+
 
 /* Global Styles */
 
@@ -65,7 +65,7 @@ nav i {
     color: white;
     margin-left: 10px;
 }
-  
+
 
 /* Dashboard Styling */
 
@@ -94,8 +94,8 @@ nav i {
 
 #totalEstimatedCostDisplayOutside,
 #totalActualCostDisplayOutside {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .total-project-costs {
@@ -138,40 +138,46 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
-  
-table, th, td {
+
+table,
+th,
+td {
     border: none;
     background: transparent;
     vertical-align: middle;
     padding-top: 3px;
     padding-bottom: 3px;
 }
-  
+
 thead th {
     text-align: left;
 }
-  
+
 .color-square {
     width: 1em;
     height: 1em;
     display: inline-block;
     border-radius: 3px;
 }
-  
-td:nth-child(1), th:nth-child(1) {
+
+td:nth-child(1),
+th:nth-child(1) {
     width: 16;
 }
-  
-td:nth-child(2), th:nth-child(2) {
+
+td:nth-child(2),
+th:nth-child(2) {
     width: 40;
 }
-  
-td:nth-child(3), th:nth-child(3) {
+
+td:nth-child(3),
+th:nth-child(3) {
     text-align: center;
     width: 20;
 }
-  
-td:nth-child(4), th:nth-child(4) {
+
+td:nth-child(4),
+th:nth-child(4) {
     text-align: center;
     width: 20;
 }
@@ -269,10 +275,10 @@ td:nth-child(4), th:nth-child(4) {
     text-align: center;
 }
 
-  #costTable th:nth-child(3),
-  #costTable td:nth-child(3) {
+#costTable th:nth-child(3),
+#costTable td:nth-child(3) {
     width: 20%;
-  }
+}
 
 .input-container {
     position: relative;
@@ -281,7 +287,7 @@ td:nth-child(4), th:nth-child(4) {
     margin-left: 5px;
 }
 
-.input-container input[type="number"]  {
+.input-container input[type="number"] {
     padding-left: 20px;
     background: #FAFAFA;
     width: 100%;
@@ -310,7 +316,7 @@ tbody tr:last-child td {
     margin-bottom: 20px;
     padding-bottom: 20px;
     box-sizing: border-box;
-}  
+}
 
 
 /* Add a £ symbol before text input even while editing */

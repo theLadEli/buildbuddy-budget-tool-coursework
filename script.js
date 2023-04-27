@@ -26,57 +26,65 @@ function drawDoughnutWheel(percentage) {
   const userScore = Math.min(percentage, 100); // Replace 62 with the actual user score value, and cap it at 100
 
 
-    // Draw the default wheel
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius - strokeWidth / 2, 0.7 * Math.PI, 2.3 * Math.PI);
-    ctx.lineCap = 'round';
-    ctx.lineWidth = strokeWidth;
-    ctx.strokeStyle = '#F2F2F5';
-    ctx.stroke();
+  // Draw the default wheel
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius - strokeWidth / 2, 0.7 * Math.PI, 2.3 * Math.PI);
+  ctx.lineCap = 'round';
+  ctx.lineWidth = strokeWidth;
+  ctx.strokeStyle = '#F2F2F5';
+  ctx.stroke();
 
-    // Calculate the filled portion
-    const startAngle = 0.7 * Math.PI;
-    const endAngle = startAngle + (1.6 * Math.PI * (userScore / 100));
+  // Calculate the filled portion
+  const startAngle = 0.7 * Math.PI;
+  const endAngle = startAngle + (1.6 * Math.PI * (userScore / 100));
 
-    // Draw the filled portion
-    const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-    gradient.addColorStop(0, '#6CBDC5');
-    gradient.addColorStop(1, '#42848A');
+  // Draw the filled portion
+  const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+  gradient.addColorStop(0, '#6CBDC5');
+  gradient.addColorStop(1, '#42848A');
 
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius - strokeWidth / 2, startAngle, endAngle);
-    ctx.lineCap = 'round';
-    ctx.lineWidth = strokeWidth;
-    ctx.strokeStyle = gradient;
-    ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, radius - strokeWidth / 2, startAngle, endAngle);
+  ctx.lineCap = 'round';
+  ctx.lineWidth = strokeWidth;
+  ctx.strokeStyle = gradient;
+  ctx.stroke();
 
-    // Draw the user score text with gradient
-    ctx.font = '700 25px Aeonik';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
+  // Draw the user score text with gradient
+  ctx.font = '700 25px Aeonik';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
 
-    ctx.save();
-    ctx.translate(centerX, centerY - 15); // Adjust the vertical position of the text
-    ctx.fillStyle = '#5aa5ac';
-    ctx.fillText(`${userScore}%`, 0, 0);
-    ctx.restore();
+  ctx.save();
+  ctx.translate(centerX, centerY - 15); // Adjust the vertical position of the text
+  ctx.fillStyle = '#5aa5ac';
+  ctx.fillText(`${userScore}%`, 0, 0);
+  ctx.restore();
 
-    // Draw the "Of estimated" text
-    ctx.font = '400 12px Aeonik';
-    ctx.fillStyle = '#272F3A';
-    ctx.fillText('Of estimated', centerX, centerY + 12); // Adjust the vertical position of the text
+  // Draw the "Of estimated" text
+  ctx.font = '400 12px Aeonik';
+  ctx.fillStyle = '#272F3A';
+  ctx.fillText('Of estimated', centerX, centerY + 12); // Adjust the vertical position of the text
 
-    // Draw the "costs" text
-    ctx.fillText('costs', centerX, centerY + 24); // Adjust the vertical position of the text
+  // Draw the "costs" text
+  ctx.fillText('costs', centerX, centerY + 24); // Adjust the vertical position of the text
 }
 
 // Horizontal Chart
 
 const lineChart = document.getElementById('lineChart');
-const segments = [
-  { color: '#4e32af', percentage: 45 },
-  { color: '#3399fd', percentage: 28 },
-  { color: '#6cbdc5', percentage: 15 },
+const segments = [{
+    color: '#4e32af',
+    percentage: 45
+  },
+  {
+    color: '#3399fd',
+    percentage: 28
+  },
+  {
+    color: '#6cbdc5',
+    percentage: 15
+  },
 ];
 
 function drawLineChart() {
@@ -110,11 +118,17 @@ drawLineChart();
 // Shell Cost CSV to HTML Table
 function csvToArray(csv) {
   const [header, ...rows] = csv.split('\n').map(row => row.split(',').map(item => item.trim()));
-  return rows.map(row => header.reduce((obj, key, i) => ({ ...obj, [key]: row[i] }), {}));
+  return rows.map(row => header.reduce((obj, key, i) => ({
+    ...obj,
+    [key]: row[i]
+  }), {}));
 }
 
 function formatCurrency(number) {
-  return parseFloat(number).toLocaleString('en-GB', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  return parseFloat(number).toLocaleString('en-GB', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  });
 }
 
 function updateTotalEstimatedCost() {
