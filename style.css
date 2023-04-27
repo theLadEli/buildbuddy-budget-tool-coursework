@@ -349,10 +349,14 @@ footer .col {
     color: #A4A9B4;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 8px;
+    font-size: 9px;
 }
 
 .selected {
     color: #57B3BD;
+    display: inline-block;
+}
+
+.budget-menu-item {
     display: inline-block;
 }
