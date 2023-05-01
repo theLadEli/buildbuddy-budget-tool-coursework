@@ -241,3 +241,11 @@ costTable.addEventListener('input', (event) => {
 });
 
 updateTotalCosts();
+
+// Basic User Info
+
+var projectName = "BuildBuddy's Office Extension";
+var projectType = "Double Storey (Side Extension)";
+
+document.getElementById('project-name').innerText = projectName;
+document.getElementById('project-type').innerText = projectType;

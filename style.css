@@ -38,14 +38,17 @@ h3 {
 
 /* Navbar */
 
+.hero-background {
+    background: url("assets/Header\ Background.png");
+    background-position: center;
+    background-size: cover;
+}
+
 nav {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: url("assets/Header\ Background.png");
-    background-position: center;
-    background-size: cover;
     height: 80px;
     padding: 50px 30px;
     text-align: center;
@@ -332,21 +335,24 @@ tbody tr:last-child td {
 /* Footer */
 
 footer {
-    background-color: white;
-    border-radius: 18px 18px 0 0;
-    padding: 25px 15px;
-    filter: drop-shadow(0px -2px 29px rgba(0, 0, 0, 0.176));
     margin-top: 35px;
-    width: 100%;
+    width: 100%;   
+    border-radius: 18px 18px 0 0;
 }
 
-footer img {
+.menu {
+    background-color: white;
+    padding: 25px 15px;
+    filter: drop-shadow(0px -2px 29px rgba(0, 0, 0, 0.176));
+}
+
+.menu img {
     height: 45px;
     display: inline-block;
     padding-bottom: 10px;
 }
 
-footer .col {
+.menu .col {
     text-align: center;
 }
 
