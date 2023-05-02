@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,44 +13,50 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+
     <!-- Bootsrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 
     <haeder>
         <div class="hero-background">
-                  
+
             <nav>
                 <i class="bi bi-list"></i>
                 <img src="assets/Logo.png" alt="BuildBuddy Logo">
             </nav>
 
-            <div>
-                <h2 id="project-name">Project Name</h2>
-                <h6 id="project-type">Project Type</h6>
+            <div id="project-info">
+                <h6 id="project-type">Single Storey Rear Extension</h6>
+                <h2 id="project-name">Eli’s Extension</h2>
             </div>
 
         </div>
 
-        
-        <section class="menu">
+
+        <section id="inline-menu">
             <div class="container">
 
                 <div class="row">
                     <div class="col">
                         <!-- content for first column -->
-                        <img src="assets/Checklist Icon.png" alt="Checklist Menu Item">
-                        <a class="menu-item" href="">Checklist</a>
+                        <img src="assets/Checklist Icon Selected.png" alt="Checklist Menu Item">
+                        <a class="selected menu-item" href="">Checklist</a>
                     </div>
 
                     <div class="col">
                         <!-- content for second column -->
-                        <img class="budget-menu-item" src="assets/Budget Tool Icon.png" alt="Checklist Menu Item">
-                        <a class="selected menu-item" href="">Budget</a>
+                        <img src="assets/Budget Tool Icon.png" alt="Checklist Menu Item">
+                        <a class="menu-item" href="">Budget</a>
                     </div>
 
                     <div class="col">
@@ -64,75 +71,88 @@
                         <a class="menu-item" href="">Documents</a>
                     </div>
                 </div>
-                
+
             </div>
         </section>
 
-    </header>
+        </header>
 
-    <section class="checklist-categories">
+        <section id="checklist-categories">
 
-        <div class="container text-center">
-            <div class="row">
 
-                <!-- Row One -->
-                <div class="col-6 col-sm-3">
-                    <img src="assets/Getting Started.png" alt="Getting Started Checklist category">
-                    <h3>Getting Started</h3>
-                    <p class="task-number">8 tasks</p>
+            <div class="container">
+                <div class="row gy-3">
+                    <div class="col">
+                        <div class="grid-item item-1">
+                            <img src="assets/Getting Started.png" alt="Getting Started Checklist category">
+                            <h4>Getting Started</h4>
+                            <p>8 tasks</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="grid-item item-2">
+                            <img src="assets/Setting a Budget.png" alt="Setting a Budget Checklist category">
+                            <h4>Setting a Budget</h4>
+                            <p>5 tasks</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 col-sm-3">
-                    <img src="assets/Setting a Budget.png" alt="Setting a Budget Checklist category">
-                    <h3>Setting a Budget</h3>
-                    <p class="task-number">5 tasks</p>
+                <div class="row gy-3">
+                    <div class="col">
+                        <div class="grid-item item-3">
+                            <img src="assets/Choosing a Builder.png" alt="Choosing a Builder Checklist category">
+                            <h4>Choosing a Builder</h4>
+                            <p>10 tasks</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="grid-item item-4">
+                            <img src="assets/Managing the Build.png" alt="Managing the Build Checklist category">
+                            <h4>Managing the Build</h4>
+                            <p>21 tasks</p>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Row Two -->
-                <div class="col-6 col-sm-3">
-                    <img src="assets/Choosing a Builder.png" alt="Choosing a Builder Checklist category">
-                    <h3>Choosing a Builder</h3>
-                    <p class="task-number">10 tasks</p>
+                <div class="row gy-3">
+                    <div class="col">
+                        <div class="grid-item item-5">
+                            <img src="assets/Final Checks.png" alt="Final Checks Checklist category">
+                            <h4>Final Checks</h4>
+                            <p>5 tasks</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="grid-item item-6">
+                            <img src="assets/Your Tasks.png" alt="Your Tasks Checklist category">
+                            <h4>Your Tasks</h4>
+                            <p>View More</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 col-sm-3">
-                    <img src="assets/Managing the Build.png" alt="Managing the Build Checklist category">
-                    <h3>Managing the Build</h3>
-                    <p class="task-number">21 tasks</p>
-                </div>    
-
-                <!-- Row Three -->
-                <div class="col-6 col-sm-3">
-                    <img src="assets/Final Checks.png" alt="Final Checks Checklist category">
-                    <h3>Final Checks</h3>
-                    <p class="task-number">5 tasks</p>
-
-                </div>
-                <div class="col-6 col-sm-3">
-                    <img src="assets/Your Tasks.png" alt="Your Tasks Checklist category">
-                    <h3>Your Tasks</h3>
-                    <p class="task-number">View More</p>
-                </div>
-
             </div>
-          </div>
 
-    </section>
+</html>
 
-    <section class="expert-consultation">
 
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-6">
+</section>
+
+<section id="expert-consultation">
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-6">
                 <h2>Schedule a FREE consultation with an Extension Expert.</h2>
-                </div>
+            </div>
 
-                <div class="col-6">.
-                    <img src="assets/Expert Consultation Icon.png" alt="Expert Consultation Icon">
-                </div>
+            <div class="col-6">.
+                <img src="assets/Expert Consultation Icon.png" alt="Expert Consultation Icon">
             </div>
         </div>
-        
-    </section>
+    </div>
+
+</section>
 
 <script src="script.js"></script>
 </body>
+
 </html>

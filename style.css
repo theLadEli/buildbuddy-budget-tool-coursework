@@ -38,12 +38,6 @@ h3 {
 
 /* Navbar */
 
-.hero-background {
-    background: url("assets/Header\ Background.png");
-    background-position: center;
-    background-size: cover;
-}
-
 nav {
     position: relative;
     display: flex;
@@ -371,4 +365,155 @@ footer {
 
 .budget-menu-item {
     display: inline-block;
+}
+
+
+/* -----------------------
+Checklist Home Page
+------------------------ */
+
+/* Header */
+
+.hero-background {
+    background: url("assets/Large\ Header\ Background.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 0;
+}
+
+#project-info {
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 25px;
+}
+
+#project-type {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 1.2;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 60%;
+}
+
+#project-name {
+    font-family: 'Aeonik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 34px;
+    color: #FFFFFF;
+}
+
+/* Menu */
+
+#inline-menu {
+    background-color: white;
+    padding: 15px 15px;
+}
+
+#inline-menu img {
+    height: 45px;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Checklist Categories */
+
+#checklist-categories {
+    padding: 10px 0;
+}
+
+.gy-3 {
+    --bs-gutter-y: 0;
+    --bs-gutter-x: 15px;
+}
+
+#checklist-categories .row {
+    margin-top: 15px;
+}
+
+.grid-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    height: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-1 {
+    border-bottom: 2px solid #ff694e;
+}   
+
+.item-2 {
+    border-bottom: 2px solid #f39d4e;
+}
+
+.item-3 {
+    border-bottom: 2px solid #f0c761;
+}
+
+.item-4 {
+    border-bottom: 2px solid #57b3bd;
+}
+
+.item-5 {
+    border-bottom: 2px solid #3399fd;
+}
+
+.item-6 {
+    border-bottom: 2px solid #a485fe;
+}
+
+h4 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 16px;
+    color: #272F3A;
+}
+
+#checklist-categories img {
+    height: 35px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#checklist-categories p {
+    font-family: 'Aeonik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #A4A9B4;
+    margin-top: 10px;
+}
+
+/* Expert Consultation */
+
+#expert-consultation {
+    background: radial-gradient(71.79% 1273.44% at 85.89% 32.35%, #4DB3BE 0%, #5EC5D0 100%);
+    text-align: left;
+    
+}
+
+#expert-consultation h2 {
+    font-family: 'Aeonik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+#expert-consultation img {
+    height: 130px;
+    width: 130px;
 }
