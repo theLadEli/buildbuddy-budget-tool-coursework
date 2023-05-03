@@ -501,7 +501,9 @@ h4 {
 #expert-consultation {
     background: radial-gradient(71.79% 1273.44% at 85.89% 32.35%, #4DB3BE 0%, #5EC5D0 100%);
     text-align: left;
-    
+    margin: 15px;
+    border-radius: 8px;
+    padding: 15px 15px 10px 15px;
 }
 
 #expert-consultation h2 {
@@ -514,6 +516,15 @@ h4 {
 }
 
 #expert-consultation img {
-    height: 130px;
-    width: 130px;
+    width: 120%;
+    margin-top: -15px;
+}
+
+#expert-consultation .row {
+    display: flex;
+    align-items: center;
+}
+
+.col-left {
+    text-align: left;
 }
